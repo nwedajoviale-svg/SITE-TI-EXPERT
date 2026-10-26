@@ -1,0 +1,137 @@
+/* ==========================================================
+   Feuille de style commune - Département TI, IUC
+   Un seul fichier partagé : modifiez-le par petits commits
+   (ex. "Style du menu", "Style de la section équipe").
+   ========================================================== */
+
+:root {
+  --encre: #10253A;     /* fond sombre, titres */
+  --maree: #1D5C7D;     /* liens, éléments secondaires */
+  --ciel: #E3EEF4;      /* fonds clairs de sections */
+  --fond: #F7FAFB;      /* fond de page */
+  --ambre: #E39B2B;     /* accent (phare) : boutons, page active */
+  --texte: #1B2B38;
+  --trait: #C5D4DE;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--texte);
+  background: var(--fond);
+}
+
+h1, h2, h3 {
+  font-family: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+  color: var(--encre);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 700; margin-bottom: 1rem; }
+h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.4rem; }
+
+p { max-width: 68ch; }
+p + p { margin-top: 0.9rem; }
+a { color: var(--maree); }
+a:hover { color: var(--encre); }
+
+:focus-visible { outline: 3px solid var(--ambre); outline-offset: 3px; }
+
+.conteneur { width: min(1080px, 92%); margin-inline: auto; }
+
+/* ---------- En-tête et navigation ---------- */
+.entete { background: var(--encre); position: sticky; top: 0; z-index: 10; }
+.entete .conteneur {
+  display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 0.5rem 2rem; padding: 0.9rem 0;
+}
+.marque {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800; font-size: 1.2rem; color: #fff; text-decoration: none;
+}
+.marque small { display: block; font-family: "Source Sans 3", sans-serif;
+  font-weight: 400; font-size: 0.8rem; color: #A9C1D1; }
+
+.menu { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; list-style: none; }
+.menu a {
+  color: #E3EEF4; text-decoration: none; padding: 0.3rem 0;
+  border-bottom: 3px solid transparent;
+}
+.menu a:hover { border-bottom-color: var(--trait); color: #fff; }
+.menu a[aria-current="page"] { border-bottom-color: var(--ambre); color: #fff; }
+
+/* ---------- Bandeau d'accueil ---------- */
+.bandeau { background: var(--encre); color: #fff; position: relative; overflow: hidden; }
+.bandeau .conteneur { padding: clamp(3rem, 9vw, 6.5rem) 0; position: relative; z-index: 1; }
+.bandeau h1 { color: #fff; max-width: 18ch; }
+.bandeau p { color: #CFE0EA; font-size: 1.2rem; margin-top: 1.2rem; max-width: 52ch; }
+.bandeau .reseau {
+  position: absolute; right: -40px; top: 50%; transform: translateY(-50%);
+  width: min(520px, 60%); opacity: 0.45; z-index: 0;
+}
+.actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
+
+.bouton {
+  display: inline-block; padding: 0.7rem 1.4rem; border-radius: 4px;
+  font-weight: 600; text-decoration: none; border: 2px solid var(--ambre);
+  background: var(--ambre); color: var(--encre);
+}
+.bouton:hover { background: #F0B04E; color: var(--encre); }
+.bouton.secondaire { background: transparent; color: #fff; border-color: #6F8EA3; }
+.bouton.secondaire:hover { border-color: #fff; color: #fff; }
+
+/* En-tête des pages intérieures */
+.titre-page { background: var(--ciel); border-bottom: 1px solid var(--trait); }
+.titre-page .conteneur { padding: 2.8rem 0 2.4rem; }
+.titre-page p { margin-top: 0.8rem; color: #3B5163; }
+
+/* ---------- Sections ---------- */
+.section { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+.section.claire { background: var(--ciel); }
+
+.domaines { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 1.5rem; }
+.domaine { border-left: 4px solid var(--ambre); padding-left: 1.1rem; }
+
+/* ---------- Équipe ---------- */
+.equipe { display: grid; gap: 2.2rem 2rem; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); margin-top: 1.5rem; }
+.personne { border-top: 2px solid var(--encre); padding-top: 1rem; }
+.initiales {
+  width: 64px; height: 64px; border-radius: 50%; background: var(--maree); color: #fff;
+  display: grid; place-items: center; font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700; font-size: 1.3rem; margin-bottom: 0.8rem;
+}
+.role { color: var(--maree); font-weight: 600; }
+
+/* ---------- Formations ---------- */
+.formation { padding: 1.6rem 0; border-top: 1px solid var(--trait); }
+.formation:first-of-type { border-top: 0; }
+.formation dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.2rem 1rem; margin-top: 0.8rem; }
+.formation dt { font-weight: 600; color: var(--encre); }
+
+/* ---------- Contact ---------- */
+.contact { display: grid; gap: 2.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+form { display: grid; gap: 1rem; }
+label { font-weight: 600; display: block; margin-bottom: 0.25rem; }
+input, textarea {
+  width: 100%; padding: 0.65rem 0.8rem; font: inherit;
+  border: 2px solid var(--trait); border-radius: 4px; background: #fff;
+}
+input:focus, textarea:focus { border-color: var(--maree); }
+textarea { min-height: 150px; resize: vertical; }
+form .bouton { justify-self: start; cursor: pointer; }
+
+/* ---------- Pied de page ---------- */
+.pied { background: var(--encre); color: #A9C1D1; padding: 1.8rem 0; font-size: 0.95rem; }
+.pied a { color: #fff; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+  .bandeau .reseau { opacity: 0.18; width: 90%; }
+  .formation dl { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
