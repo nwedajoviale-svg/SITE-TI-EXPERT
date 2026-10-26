@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Contact - Département TI - IUC</title>
+</head>
+<body>
+  <header class="entete">
+    <div class="conteneur">
+      <a class="marque" href="index.html">Département TI/EXPERT<small>Institut Universitaire de la Côte</small></a>
+      <nav aria-label="Navigation principale">
+        <ul class="menu">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="formations.html">Formations</a></li>
+          <li><a href="equipe.html">Équipe</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="titre-page">
+      <div class="conteneur">
+        <h1>Contact</h1>
+        <p>Une question sur le département ou ses formations ? Écrivez-nous.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="conteneur contact">
+        <div>
+          <h2>Coordonnées</h2>
+          <p><strong>Adresse :</strong> Institut Universitaire de la Côte, Douala-Logbessou, Cameroun</p>
+          <p><strong>Courriel :</strong> iuc@myiuc.com</p>
+          <p><strong>Téléphone :</strong> (+237)678101616</p>
+        </div>
+
+        <div>
+          <h2>Envoyer un message</h2>
+          <!-- Formulaire d'affichage uniquement : il n'envoie rien tant qu'il n'est pas relié à un service. -->
+          <form action="#" method="post">
+            <div>
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" required>
+            </div>
+            <div>
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button class="bouton" type="submit">Envoyer le message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <p>© 2026 Département TI, Institut Universitaire de la Côte (IUC). Projet pédagogique réalisé en groupe avec Git.</p>
+    </div>
+  </footer>
+</body>
+</html>
